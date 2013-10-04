@@ -1,12 +1,12 @@
 # ISUCON2
 
-## ユーザをapacheグループに追加 
+- ユーザをapacheグループに追加 
 
     ```
     sudo /usr/sbin/usermod -G apache isu-user
     ```
 
-## リポジトリ作成
+- リポジトリ作成
 
     ```
     sudo mkdir /var/www/svn
@@ -20,7 +20,7 @@
     svn commit -m 'first commit'
     ```
 
-## apacheのログディレクトリ作成
+- apacheのログディレクトリ作成
 
     ```
     sudo mkdir /var/log/httpd/webapp
@@ -29,7 +29,7 @@
     sudo chown -R apache:apache /var/log/httpd/proxy
     ```
 
-## ドキュメントルートにアプリを配置
+- ドキュメントルートにアプリを配置
 
     ```
     cd /var/www/html
@@ -38,14 +38,14 @@
     sudo chmod -R 775 webapp
     ```
 
-## リポジトリチェックアウト
+- リポジトリチェックアウト
 
     ```
     cd
     svn co file:///var/www/svn/isucon2/trunk
     ```
 
-## シンボリックリンクに変更
+- シンボリックリンクに変更
 
     ```
     cd /etc/httpd
@@ -55,19 +55,19 @@
     sudo ln -s /home/isu-user/trunk/etc/httpd/conf.d conf.d
     ```
 
-## memcachedインストール
+- memcachedインストール
 
     ```
     sudo yum install memcached 
     sudo yum install php-pecl-memcached
     ```
 
-## apache起動
+- apache起動
 
     ```
     sudo /etc/init.d/httpd start
     ```
 
-## ブラウザでサイトにアクセス
+- ブラウザでサイトにアクセス
 
     http://ec2-54-238-155-221.ap-northeast-1.compute.amazonaws.com:5000/
