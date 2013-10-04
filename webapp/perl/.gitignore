@@ -1,0 +1,7 @@
+Makefile
+MYMETA.*
+META.*
+extlib/
+carton.lock
+local/
+.carton/
